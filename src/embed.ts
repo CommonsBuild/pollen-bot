@@ -209,7 +209,7 @@ export function verifyDiscourseEmbed(
     fields: [
       {
         name: "1. Change your discourse name",
-        value: `Go to your [account preferences](https://forum.1hive.org/u/${discourseUsername}/preferences/account) and after that,
+        value: `Go to your [account preferences](https://forum.tecommons.org/u/${discourseUsername}/preferences/account) and after that,
         change your 'Name' field temporarily into this: \`${verificationCode}\`.`,
       },
       {

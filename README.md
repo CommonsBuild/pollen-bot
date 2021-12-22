@@ -1,6 +1,6 @@
 ## Quickstart
 
-<a href="https://heroku.com/deploy?template=https://github.com/1Hive/pollen-bot">
+<a href="https://heroku.com/deploy?template=https://github.com/CommonsBuild/pollen-bot">
 <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 

@@ -39,7 +39,7 @@ export async function handleDiscourseCheck(
 
 // get user information from discourse api
 async function getSpecificUser(discourse_username: string) {
-  const getSpecificUser_URL = `https://forum.1hive.org/users/${discourse_username}.json`;
+  const getSpecificUser_URL = `https://forum.tecommons.org/users/${discourse_username}.json`;
 
   const userJson = await fetch(getSpecificUser_URL).then((response) => {
     if (response.ok) {

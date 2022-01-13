@@ -1,6 +1,8 @@
 import { sourcecred } from "sourcecred"
 import fetch from "node-fetch"
 
+import { ledgerFileURI } from "constants"
+
 // NOTE: As this is a "server bot",
 // we don't avoid logging on production, as users will be able
 // to see logs from their individual instances
@@ -21,7 +23,6 @@ function warnOnce(domain, ...args) {
 
 export async function loadLedger(): Promise<any> {
   try {
-    const ledgerFileURI = "https://raw.githubusercontent.com/1Hive/pollen/gh-pages/data/ledger.json"
     const ledgerFileResponse = await fetch(ledgerFileURI);
 
     if (!ledgerFileResponse.ok)

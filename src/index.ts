@@ -8,7 +8,6 @@ import { RequestHandlerError } from "./error-utils";
 import { log } from "./utils";
 import updateroles from "./handlers/updateRoles";
 
-import { wrongChannelWarningEmbed } from "./embed";
 import { commandPrefix } from "./constants";
 
 require("./db/connection");
@@ -36,36 +35,13 @@ client.on("ready", () => {
 client.on("messageCreate", (message) => {
   if (message.author.bot) return;
 
-  // Gets the Bot-commands channel ID.
-  const BOT_COMMANDS_CHANNEL_ID =
-    process.env.BOT_COMMANDS_CHANNEL_ID || message.channel.type === "DM"
-      ? message.channel.id
-      : message.guild.channels.cache.find((channel) => {
-          return channel.name.includes("bot-commands");
-        }).id;
-
   try {
     const handler = detectHandler(message.content);
     if (handler) {
-      // Checks if channel is #bot-commands or message is NOT from guild
-      if (
-        message.channel.id === BOT_COMMANDS_CHANNEL_ID ||
-        message.guild === null
-      ) {
-        handler(message);
-        log(
-          `Served command ${message.content} successfully for ${message.author.username}.`
-        );
-      } else {
-        message.delete();
-        client.channels.fetch(BOT_COMMANDS_CHANNEL_ID).then((channel) => {
-          (channel as TextChannel).send(`<@${message.author.id}>`);
-          (channel as TextChannel).send({
-            embeds: [wrongChannelWarningEmbed()],
-          });
-        });
-        return;
-      }
+      handler(message);
+      log(
+        `Served command ${message.content} successfully for ${message.author.username}.`
+      );
     }
   } catch (err) {
     if (err instanceof RequestHandlerError) {

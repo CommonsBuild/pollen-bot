@@ -48,7 +48,7 @@ async function getUserGist(github_username: string) {
   let gistPollen, username;
 
   for (let i = 0; i < responseJson.length; i++) {
-    if (responseJson[i].files["pollen.md"]) {
+    if (responseJson[i].files["cred_verification.md"]) {
       const gistJson = await fetch(responseJson[i].url).then((response) => {
         if (response.ok) {
           return response.json();
@@ -57,7 +57,7 @@ async function getUserGist(github_username: string) {
         }
       });
 
-      gistPollen = gistJson.files["pollen.md"];
+      gistPollen = gistJson.files["cred_verification.md"];
       username = gistJson.owner.login;
     }
   }

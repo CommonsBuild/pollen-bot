@@ -2,31 +2,11 @@
 import { MessageEmbed } from "discord.js";
 import { commandPrefix } from "./constants";
 
-export function wrongChannelWarningEmbed(): MessageEmbed {
-  return new MessageEmbed({
-    title: "Warning 🚨",
-    description:
-      "Bot commands are only allowed in <#762377613062701146> channel!",
-    color: 16769024,
-    fields: [
-      {
-        name: "Lets keep our discord server clean :)",
-        value:
-          "We encourage bees to use channels properly, if you ever feel lost check [this at #info](https://discordapp.com/channels/698287700834517064/758821739202347038/758886904078008363).",
-      },
-    ],
-    timestamp: new Date(),
-    footer: {
-      text: "wiki.1hive.org",
-    },
-  });
-}
-
 export function walletWarningEmbed(): MessageEmbed {
   return new MessageEmbed({
     title: "Warning 🚨",
     description: `You are using the \`${commandPrefix} save-wallet\` command incorrectly!`,
-    color: 16769024,
+    color: 0x0F2EEE,
     fields: [
       {
         name: `\`${commandPrefix} save-wallet walletAddress\``,
@@ -35,44 +15,44 @@ export function walletWarningEmbed(): MessageEmbed {
       },
     ],
     image: {
-      url: "https://cdn.discordapp.com/attachments/762754727620378634/847572341910274180/01.png",
+      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
     },
     timestamp: new Date(),
     footer: {
-      text: "wiki.1hive.org",
+      text: "https://token-engineering-commons.gitbook.io/tec-source/",
     },
   });
 }
 
 export function infoEmbed(): MessageEmbed {
   return new MessageEmbed({
-    color: 16769024,
+    color: 0x0F2EEE,
     author: {
-      name: "Pollen bot",
-      url: "https://github.com/1Hive/pollen-bot",
+      name: "{TBD} sourcecred bot",
+      url: "https://github.com/CommonsBuild/pollen-bot/",
     },
     description:
-      "[Pollen](https://wiki.1hive.org/getting-started/pollen) is a contributor rank used to recognize contributions to 1Hive's Discord, Discourse, and GitHub communities. These contributions are rewarded with weekly distributions of Honey.",
+      "{TBD}",
     thumbnail: {
-      url: "https://cdn.discordapp.com/attachments/762754727620378634/847572341910274180/01.png",
+      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
     },
     fields: [
       {
         name: "Signing up",
         value:
-          "To sign up for Pollen, you need to send your information to the DB using some of the following commands.",
+          "To sign up for sourcecred, you need to send your information to the DB using some of the following commands.",
       },
       {
         name: "Save wallet address - required",
-        value: `Send \`${commandPrefix} save-wallet walletAddress\` to add your wallet address to the Pollen DB as well as your Discord ID and Discord tag.`,
+        value: `Send \`${commandPrefix} save-wallet walletAddress\` to add your wallet address to the DB as well as your Discord ID and Discord tag.`,
       },
       {
         name: "Save Discourse (Forum) account - optional",
-        value: `Send \`${commandPrefix} verify-discourse discourseUsername\` and follow the process to verify and add your Discourse account (if you have one) to the Pollen DB.`,
+        value: `Send \`${commandPrefix} verify-discourse discourseUsername\` and follow the process to verify and add your Discourse account (if you have one) to the DB.`,
       },
       {
         name: "Save GitHub account - optional",
-        value: `Send \`${commandPrefix} verify-github githubUsername\` and follow the process to verify and add your GitHub account (if you have one) to the Pollen DB.`,
+        value: `Send \`${commandPrefix} verify-github githubUsername\` and follow the process to verify and add your GitHub account (if you have one) to the DB.`,
       },
       {
         name: "Update Discord account",
@@ -81,30 +61,30 @@ export function infoEmbed(): MessageEmbed {
     ],
     timestamp: new Date(),
     footer: {
-      text: "wiki.1hive.org",
+      text: "https://token-engineering-commons.gitbook.io/tec-source/",
     },
   });
 }
 
 export function helpEmbed(): MessageEmbed {
   return new MessageEmbed({
-    color: 16769024,
+    color: 0x0F2EEE,
     author: {
-      name: "Pollen bot",
-      url: "https://github.com/1Hive/pollen-bot",
+      name: "{TBD} Sourcecred Bot",
+      url: "https://github.com/CommonsBuild/pollen-bot/",
     },
-    description: `Hi, my name's Pollen Bot, I handle some Pollen related actions. All my commands are prefixed by \`${commandPrefix}\`. Refer to the list below for a list of my commands!`,
+    description: `Hi, my name's {TBD}, I handle some sourcecred related actions. All my commands are prefixed by \`${commandPrefix}\`. Refer to the list below for a list of my commands!`,
     thumbnail: {
-      url: "https://cdn.discordapp.com/attachments/762754727620378634/847572341910274180/01.png",
+      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
     },
     fields: [
       {
         name: `${commandPrefix} help`,
-        value: "Lists all pollen commands.",
+        value: "Lists all commands.",
       },
       {
         name: `${commandPrefix} info`,
-        value: "Displays information of what Pollen is and how to get started.",
+        value: "Displays information of what Sourcecred is and how to get started.",
       },
       {
         name: `${commandPrefix} mycred`,
@@ -113,12 +93,12 @@ export function helpEmbed(): MessageEmbed {
       },
       {
         name: `${commandPrefix} userinfo`,
-        value: "Shows your pollen user info saved in the database.",
+        value: "Shows your sourcecred user info saved in the database.",
       },
       {
         name: `${commandPrefix} save-wallet YourWalletAddress`,
         value:
-          "Saves your wallet address, Discord ID and Discord tag in the database (address will be used for pollen payouts).",
+          "Saves your wallet address, Discord ID and Discord tag in the database (address will be used for cred payouts).",
       },
       {
         name: `${commandPrefix} verify-discourse YourDiscourseUsername`,
@@ -140,21 +120,21 @@ export function helpEmbed(): MessageEmbed {
     },
     timestamp: new Date(),
     footer: {
-      text: "wiki.1hive.org",
+      text: "https://token-engineering-commons.gitbook.io/tec-source/",
     },
   });
 }
 
 export function adminHelpEmbed(): MessageEmbed {
   return new MessageEmbed({
-    color: 16769024,
+    color: 0x0F2EEE,
     author: {
-      name: "Pollen bot",
-      url: "https://github.com/1Hive/pollen-bot",
+      name: "{TBD} Sourcecred bot",
+      url: "https://github.com/CommonsBuild/pollen-bot",
     },
     description: "Refer to the list below for a list of admin commands",
     thumbnail: {
-      url: "https://cdn.discordapp.com/attachments/762754727620378634/847572341910274180/01.png",
+      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
     },
     fields: [
       {
@@ -173,15 +153,15 @@ export function adminHelpEmbed(): MessageEmbed {
       },
       {
         name: `${commandPrefix} getbanned`,
-        value: "Gets the list of pollen banned users.",
+        value: "Gets the list of sourcecred banned users.",
       },
       {
         name: `${commandPrefix} ban [user ID or IDs separated by spaces (' ')]`,
-        value: "Bans the specified users from pollen.",
+        value: "Bans the specified users from cred.",
       },
       {
         name: `${commandPrefix} uban [user ID or IDs separated by spaces (' ')]`,
-        value: "Unbans the specified users from pollen.",
+        value: "Unbans the specified users from cred.",
       },
     ],
     image: {
@@ -189,7 +169,7 @@ export function adminHelpEmbed(): MessageEmbed {
     },
     timestamp: new Date(),
     footer: {
-      text: "wiki.1hive.org",
+      text: "https://token-engineering-commons.gitbook.io/tec-source/",
     },
   });
 }
@@ -201,11 +181,11 @@ export function verifyDiscourseEmbed(
   return new MessageEmbed({
     title: "Verify discourse account",
     description:
-      "Process to verify your account to opt-in for pollen distributions.",
+      "Process to verify your account to opt-in for cred distributions.",
     thumbnail: {
-      url: "https://cdn.discordapp.com/attachments/762754727620378634/847572341910274180/01.png",
+      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
     },
-    color: 16769024,
+    color: 0x0F2EEE,
     fields: [
       {
         name: "1. Change your discourse name",
@@ -220,7 +200,7 @@ export function verifyDiscourseEmbed(
     ],
     timestamp: new Date(),
     footer: {
-      text: "wiki.1hive.org",
+      text: "https://token-engineering-commons.gitbook.io/tec-source/",
     },
   });
 }
@@ -232,18 +212,18 @@ export function successDiscourseVerificationEmbed(
     title: "Congratulations!",
     description: "The verification process was completed successfully",
     thumbnail: {
-      url: "https://cdn.discordapp.com/attachments/762754727620378634/847572341910274180/01.png",
+      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
     },
-    color: 16769024,
+    color: 0x0F2EEE,
     fields: [
       {
         name: "All set!",
-        value: `Thanks for verifying your discourse account for pollen distributions, ${discourseUsername}!`,
+        value: `Thanks for verifying your discourse account for cred distributions, ${discourseUsername}!`,
       },
     ],
     timestamp: new Date(),
     footer: {
-      text: "wiki.1hive.org",
+      text: "https://token-engineering-commons.gitbook.io/tec-source/",
     },
   });
 }
@@ -255,9 +235,9 @@ export function errorDiscourseVerificationEmbed(
     title: "Bad news!",
     description: "There was an error in the discourse verification process.",
     thumbnail: {
-      url: "https://cdn.discordapp.com/attachments/762754727620378634/847572341910274180/01.png",
+      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
     },
-    color: 16769024,
+    color: 0x0F2EEE,
     fields: [
       {
         name: "This is what happened",
@@ -266,7 +246,7 @@ export function errorDiscourseVerificationEmbed(
     ],
     timestamp: new Date(),
     footer: {
-      text: "wiki.1hive.org",
+      text: "https://token-engineering-commons.gitbook.io/tec-source/",
     },
   });
 }
@@ -278,11 +258,11 @@ export function verifyGithubEmbed(
   return new MessageEmbed({
     title: "Verify github account",
     description:
-      "Process to verify your account to opt-in for pollen distributions.",
+      "Process to verify your account to opt-in for cred distributions.",
     thumbnail: {
-      url: "https://cdn.discordapp.com/attachments/762754727620378634/847572341910274180/01.png",
+      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
     },
-    color: 16769024,
+    color: 0x0F2EEE,
     fields: [
       {
         name: "1. Create a public gist",
@@ -301,7 +281,7 @@ export function verifyGithubEmbed(
     ],
     timestamp: new Date(),
     footer: {
-      text: "wiki.1hive.org",
+      text: "https://token-engineering-commons.gitbook.io/tec-source/",
     },
   });
 }
@@ -313,18 +293,18 @@ export function successGithubVerificationEmbed(
     title: "Congratulations!",
     description: "The verification process was completed successfully",
     thumbnail: {
-      url: "https://cdn.discordapp.com/attachments/762754727620378634/847572341910274180/01.png",
+      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
     },
-    color: 16769024,
+    color: 0x0F2EEE,
     fields: [
       {
         name: "All set!",
-        value: `Thanks for verifying your github account for pollen distributions, ${githubUsername}!`,
+        value: `Thanks for verifying your github account for cred distributions, ${githubUsername}!`,
       },
     ],
     timestamp: new Date(),
     footer: {
-      text: "wiki.1hive.org",
+      text: "https://token-engineering-commons.gitbook.io/tec-source/",
     },
   });
 }
@@ -336,9 +316,9 @@ export function errorGithubVerificationEmbed(
     title: "Bad news!",
     description: "There was an error in the github verification process.",
     thumbnail: {
-      url: "https://cdn.discordapp.com/attachments/762754727620378634/847572341910274180/01.png",
+      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
     },
-    color: 16769024,
+    color: 0x0F2EEE,
     fields: [
       {
         name: "This is what happened",
@@ -347,7 +327,7 @@ export function errorGithubVerificationEmbed(
     ],
     timestamp: new Date(),
     footer: {
-      text: "wiki.1hive.org",
+      text: "https://token-engineering-commons.gitbook.io/tec-source/",
     },
   });
 }
@@ -358,10 +338,10 @@ export function credEmbed(
   thisWeekCred: number
 ): MessageEmbed {
   return new MessageEmbed({
-    color: 16769024,
+    color: 0x0F2EEE,
     title: "Your cred:",
     thumbnail: {
-      url: "https://cdn.discordapp.com/attachments/762754727620378634/847572341910274180/01.png",
+      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
     },
     fields: [
       {
@@ -379,7 +359,7 @@ export function credEmbed(
     ],
     timestamp: new Date(),
     footer: {
-      text: "pollen.1hive.org",
+      text: "https://commonsbuild.github.io/tec-sourcecred/",
     },
   });
 }

@@ -1,12 +1,19 @@
 /* eslint-disable quotes */
 import { MessageEmbed } from "discord.js";
-import { commandPrefix } from "./constants";
+import {
+  commandPrefix,
+  wikiLink,
+  embedColor,
+  logoLink,
+  repoLink,
+  instanceLink
+} from "./constants";
 
 export function walletWarningEmbed(): MessageEmbed {
   return new MessageEmbed({
     title: "Warning 🚨",
     description: `You are using the \`${commandPrefix} save-wallet\` command incorrectly!`,
-    color: 0x0F2EEE,
+    color: embedColor,
     fields: [
       {
         name: `\`${commandPrefix} save-wallet walletAddress\``,
@@ -15,26 +22,26 @@ export function walletWarningEmbed(): MessageEmbed {
       },
     ],
     image: {
-      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
+      url: logoLink,
     },
     timestamp: new Date(),
     footer: {
-      text: "https://token-engineering-commons.gitbook.io/tec-source/",
+      text: wikiLink,
     },
   });
 }
 
 export function infoEmbed(): MessageEmbed {
   return new MessageEmbed({
-    color: 0x0F2EEE,
+    color: embedColor,
     author: {
       name: "{TBD} sourcecred bot",
-      url: "https://github.com/CommonsBuild/pollen-bot/",
+      url: repoLink,
     },
     description:
       "{TBD}",
     thumbnail: {
-      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
+      url: logoLink,
     },
     fields: [
       {
@@ -61,21 +68,21 @@ export function infoEmbed(): MessageEmbed {
     ],
     timestamp: new Date(),
     footer: {
-      text: "https://token-engineering-commons.gitbook.io/tec-source/",
+      text: wikiLink,
     },
   });
 }
 
 export function helpEmbed(): MessageEmbed {
   return new MessageEmbed({
-    color: 0x0F2EEE,
+    color: embedColor,
     author: {
       name: "{TBD} Sourcecred Bot",
-      url: "https://github.com/CommonsBuild/pollen-bot/",
+      url: repoLink,
     },
     description: `Hi, my name's {TBD}, I handle some sourcecred related actions. All my commands are prefixed by \`${commandPrefix}\`. Refer to the list below for a list of my commands!`,
     thumbnail: {
-      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
+      url: logoLink,
     },
     fields: [
       {
@@ -120,21 +127,21 @@ export function helpEmbed(): MessageEmbed {
     },
     timestamp: new Date(),
     footer: {
-      text: "https://token-engineering-commons.gitbook.io/tec-source/",
+      text: wikiLink,
     },
   });
 }
 
 export function adminHelpEmbed(): MessageEmbed {
   return new MessageEmbed({
-    color: 0x0F2EEE,
+    color: embedColor,
     author: {
       name: "{TBD} Sourcecred bot",
       url: "https://github.com/CommonsBuild/pollen-bot",
     },
     description: "Refer to the list below for a list of admin commands",
     thumbnail: {
-      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
+      url: logoLink,
     },
     fields: [
       {
@@ -169,7 +176,7 @@ export function adminHelpEmbed(): MessageEmbed {
     },
     timestamp: new Date(),
     footer: {
-      text: "https://token-engineering-commons.gitbook.io/tec-source/",
+      text: wikiLink,
     },
   });
 }
@@ -183,9 +190,9 @@ export function verifyDiscourseEmbed(
     description:
       "Process to verify your account to opt-in for cred distributions.",
     thumbnail: {
-      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
+      url: logoLink,
     },
-    color: 0x0F2EEE,
+    color: embedColor,
     fields: [
       {
         name: "1. Change your discourse name",
@@ -200,7 +207,7 @@ export function verifyDiscourseEmbed(
     ],
     timestamp: new Date(),
     footer: {
-      text: "https://token-engineering-commons.gitbook.io/tec-source/",
+      text: wikiLink,
     },
   });
 }
@@ -212,9 +219,9 @@ export function successDiscourseVerificationEmbed(
     title: "Congratulations!",
     description: "The verification process was completed successfully",
     thumbnail: {
-      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
+      url: logoLink,
     },
-    color: 0x0F2EEE,
+    color: embedColor,
     fields: [
       {
         name: "All set!",
@@ -223,7 +230,7 @@ export function successDiscourseVerificationEmbed(
     ],
     timestamp: new Date(),
     footer: {
-      text: "https://token-engineering-commons.gitbook.io/tec-source/",
+      text: wikiLink,
     },
   });
 }
@@ -235,9 +242,9 @@ export function errorDiscourseVerificationEmbed(
     title: "Bad news!",
     description: "There was an error in the discourse verification process.",
     thumbnail: {
-      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
+      url: logoLink,
     },
-    color: 0x0F2EEE,
+    color: embedColor,
     fields: [
       {
         name: "This is what happened",
@@ -246,7 +253,7 @@ export function errorDiscourseVerificationEmbed(
     ],
     timestamp: new Date(),
     footer: {
-      text: "https://token-engineering-commons.gitbook.io/tec-source/",
+      text: wikiLink,
     },
   });
 }
@@ -260,14 +267,14 @@ export function verifyGithubEmbed(
     description:
       "Process to verify your account to opt-in for cred distributions.",
     thumbnail: {
-      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
+      url: logoLink,
     },
-    color: 0x0F2EEE,
+    color: embedColor,
     fields: [
       {
         name: "1. Create a public gist",
         value:
-          "Create a [public gist](https://gist.github.com/) called `pollen.md`",
+          "Create a [public gist](https://gist.github.com/) called `cred_verification.md`",
       },
       {
         name: `2. Set code \`${verificationCode}\``,
@@ -281,7 +288,7 @@ export function verifyGithubEmbed(
     ],
     timestamp: new Date(),
     footer: {
-      text: "https://token-engineering-commons.gitbook.io/tec-source/",
+      text: wikiLink,
     },
   });
 }
@@ -293,9 +300,9 @@ export function successGithubVerificationEmbed(
     title: "Congratulations!",
     description: "The verification process was completed successfully",
     thumbnail: {
-      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
+      url: logoLink,
     },
-    color: 0x0F2EEE,
+    color: embedColor,
     fields: [
       {
         name: "All set!",
@@ -304,7 +311,7 @@ export function successGithubVerificationEmbed(
     ],
     timestamp: new Date(),
     footer: {
-      text: "https://token-engineering-commons.gitbook.io/tec-source/",
+      text: wikiLink,
     },
   });
 }
@@ -316,9 +323,9 @@ export function errorGithubVerificationEmbed(
     title: "Bad news!",
     description: "There was an error in the github verification process.",
     thumbnail: {
-      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
+      url: logoLink,
     },
-    color: 0x0F2EEE,
+    color: embedColor,
     fields: [
       {
         name: "This is what happened",
@@ -327,7 +334,7 @@ export function errorGithubVerificationEmbed(
     ],
     timestamp: new Date(),
     footer: {
-      text: "https://token-engineering-commons.gitbook.io/tec-source/",
+      text: wikiLink,
     },
   });
 }
@@ -338,10 +345,10 @@ export function credEmbed(
   thisWeekCred: number
 ): MessageEmbed {
   return new MessageEmbed({
-    color: 0x0F2EEE,
+    color: embedColor,
     title: "Your cred:",
     thumbnail: {
-      url: "https://images-ext-1.discordapp.net/external/9wjKKfnz90VR4MCxCu_KYVee6HDO8smJduqtL8dbNCs/%3Fsize%3D128/https/cdn.discordapp.com/icons/776352494992883722/0000b679a3e5f283653a38e138a43f9b.webp",
+      url: logoLink,
     },
     fields: [
       {
@@ -359,7 +366,7 @@ export function credEmbed(
     ],
     timestamp: new Date(),
     footer: {
-      text: "https://commonsbuild.github.io/tec-sourcecred/",
+      text: instanceLink,
     },
   });
 }
